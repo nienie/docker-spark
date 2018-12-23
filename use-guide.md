@@ -36,3 +36,8 @@ docker exec -it {container-id} /bin/bash
 cd spark
 bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-master:7077 examples/jars/spark-examples_2.11-2.4.0.jar 100 2>&1 | grep "Pi is roughly"
 ```
+
+8. Spark python shell.
+```bash
+pyspark --master spark://spark-master:7077
+```
