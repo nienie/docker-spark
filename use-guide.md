@@ -26,6 +26,7 @@ docker rm {container-id}
 ```
 
 6. Spark management webstie.
+
 Chrome: "http://127.0.0.1:8080"
 
 7. Test spark cluster
