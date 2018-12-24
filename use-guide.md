@@ -53,30 +53,3 @@ print "Pi is roughly %f" % (4.0 * count / NUM_SAMPLES)
 #output: Pi is roughly 3.145192
 ```
 
-9. Submit python spark job.
-
-python spark application(pi.py)
-```python
-import random
-from pyspark import SparkContext, SparkConf
-
-conf=SparkConf()
-conf.setMaster("spark://spark-master:7077")
-conf.setAppName("compute pi application")
-
-NUM_SAMPLES = 1000000
-
-def inside(p):
-   x, y = random.random(), random.random()
-   return x * x + y * y < 1
-
-sc = SparkContext(conf=conf)
-count = sc.parallelize(range(0, NUM_SAMPLES)).filter(inside).count()
-
-print "Pi is roughly %f" % (4.0 * count / NUM_SAMPLES)
-```
-
-submit the python application
-```bash
-bin/spark-submit pi.py
-```
